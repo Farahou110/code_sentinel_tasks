@@ -15,7 +15,7 @@ def save(tasks):
 
 
 def add_new(tasks):
-    new_task =input("enter task number")
+    new_task =input("enter task number ")
     tasks.append(new_task)
     save(tasks) 
     print("task added")
@@ -23,7 +23,7 @@ def add_new(tasks):
 def delete(tasks):
     display_task(tasks)
  
-    index=int(input("enter task number to be deleted"))-1
+    index=int(input("enter task number to be deleted "))-1
 
     if 0<=index<len(tasks):
         removed = tasks.pop(index)
@@ -54,7 +54,7 @@ def main():
     tasks=load()
     while True:
         print("\n1: add task \n2: Remove task \n3: View tasks \n4: View raw tasks.json \n5: exit")
-        choice=int(input("please choose option"))
+        choice=int(input("please choose option "))
     
         if choice==1:
            add_new(tasks)

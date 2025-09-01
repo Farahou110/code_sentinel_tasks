@@ -1,0 +1,13 @@
+,Tweet_ID,Username,Text,Retweets,Likes,Timestamp
+count,10000.0,10000,10000,10000.0,10000.0,10000
+unique,,9447,10000,,,9993
+top,,pjohnson,"Party least receive say or single. Prevent prevent husband affect. May himself cup style evening protect. Effect another themselves stage perform.
+Possible try tax share style television with. Successful much sell development economy effect.",,,2023-01-23 12:44:46
+freq,,6,1,,,2
+mean,5000.5,,,49.7212,49.9293,
+std,2886.8956799071675,,,28.948856180986127,28.877193262834147,
+min,1.0,,,0.0,0.0,
+25%,2500.75,,,25.0,25.0,
+50%,5000.5,,,49.0,50.0,
+75%,7500.25,,,75.0,75.0,
+max,10000.0,,,100.0,100.0,

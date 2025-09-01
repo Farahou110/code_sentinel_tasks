@@ -28,7 +28,7 @@ def get_sentiment(text):
 df['sentiment'] = df['clean_text'].apply(get_sentiment)
 df['sentiment_label'] = df['sentiment'].apply(lambda x: 'positive' if x > 0 else ('negative' if x < 0 else 'neutral'))
 
-# Visualize positive vs negative tweet counts
+
 sentiment_counts = df['sentiment_label'].value_counts()[['positive', 'negative', 'neutral']]
 
 sentiment_counts.plot(kind='bar', color=['green', 'red', 'gray'])

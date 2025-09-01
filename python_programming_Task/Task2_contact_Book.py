@@ -1,35 +1,45 @@
-def append_inputs() :
-    Name = str(input(("please enter your Name ")))
-    phone_Number=str(input(("phone mumber please ")))
-
-    with open("contacts.txt","a") as file:
-        file.write(Name+ "\t" + phone_Number + "\n")
-    print("successfully saved")
+def append_inputs():
+    Name = str(input("Please enter your Name: ")).strip()
+    phone_Number = str(input("Phone number please: ")).strip()
+    
+    with open("contacts.txt", "a") as file:
+        file.write(Name + "," + phone_Number + "\n")
+    print("Successfully saved")
 
 def check_db():
-    with open("contacts.txt","r") as file:
-     Name=file.readline()
-    if Name:
-        print("=====list of saved details======")
-    for name1 in phone_Num:
-        print(name1)
-
+    try:
+        with open("contacts.txt", "r") as file:
+            contacts = file.readlines()
+        
+        if not contacts:
+            print("No contacts found in database")
+            return
+            
+        print("===== List of Saved Contacts =====")
+        for index, contact in enumerate(contacts, 1):
+            contact = contact.strip()
+            if ',' in contact:
+                name, phone = contact.split(',', 1)  # Split only on first comma
+                print(f"{index}. {name}: {phone}")
+            else:
+                print(f"{index}. Invalid format: {contact}")
+                
+    except FileNotFoundError:
+        print("No contacts database found. Please add some contacts first.")
 
 def main():
-    print("+===phone Book =====")   
-
-    print("\n A. Enter details")
-
-    print("\n B. Check database")
-    choice=input("what would you like to do from the above choices ? ")
+    print("+=== Phone Book ====")   
+    print("\nA. Enter details")
+    print("\nB. Check database")
+    
+    choice = input("What would you like to do from the above choices? ").upper()
+    
     if choice == "A":
         append_inputs()
-    elif choice =="B":
+    elif choice == "B":
         check_db()
-    else :
-        print("please choose from the above choices")
+    else:
+        print("Please choose from the above choices (A or B)")
 
-if __name__=="__main__" :
+if __name__ == "__main__":
     main()
-
-
